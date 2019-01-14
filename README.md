@@ -2,3 +2,4 @@
 Blog
 
 Le super blog du super écrivain
+Salut!
