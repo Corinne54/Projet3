@@ -49,3 +49,4 @@ function postComment($postId, $author, $comment)
 
     return $affectedLines;
 }
+

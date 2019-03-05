@@ -1,8 +1,10 @@
 <?php
-require('controller/frontend.php');
+session_start();
 
+require('controller/frontend.php');
+require('controller/backend.php');
 if (isset($_GET['action'])) {
-    if ($_GET['action'] == 'listPosts') {
+    if ($_GET['action'] == 'listposts') {
         listPosts();
     }
     elseif ($_GET['action'] == 'post') {
@@ -26,7 +28,51 @@ if (isset($_GET['action'])) {
             echo 'Erreur : aucun identifiant de billet envoyé';
         }
     }
+    elseif ($_GET['action'] == 'login') {
+
+
+            if (!empty($_POST['email']) && !empty($_POST['password'])) {
+                login($_POST['email'], $_POST['password']);
+            }
+            else {
+                login("","");
+            }
+
+
+    }
+
+    elseif ($_GET['action'] == 'addPost') {
+
+            if (!empty($_TITLE['title']) && !empty($_CONTENT['content'])) {
+                addpost($_POST['title'], $_POST['content'], $_POST['creation_date']);
+            }
+
+        }
+
+
+
+ if ($_GET['action']=='admin') {
+
+     admin();
+ }
+
+
+    if ($_GET['action']=='logout') {
+
+        logout();
+    }
+
+    elseif ($_GET['action'] == 'hello' && isset($_GET['name'])) {
+
+        hello($_GET['name']);
+    }
+
+    if ($_GET['action']=='addpostform') {
+        addpostform();
+    }
 }
+
+
 else {
     listPosts();
 }

@@ -8,6 +8,10 @@
 
 <body>
 Hello
-<?=$name; ?>
+<?=$name['name']; ?>
+<p>
+  Mon email:
+</p>
+<?=$_SESSION['email']; ?>
 </body>
 </html>

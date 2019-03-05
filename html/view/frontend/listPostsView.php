@@ -3,9 +3,9 @@
 
 <?php ob_start(); ?>
 
-<h1>Mon super blog !</h1>
+<h1>Le blog de Jean Forteroche</h1>
 
-<p>Derniers billets du blog :</p>
+<p><h4>Découvrez les derniers chapitres :</h4></p>
 
 
 <?php
@@ -28,8 +28,10 @@ while ($data = $posts->fetch())
 }
 $posts->closeCursor();
 ?>
+
+<a href="/index.php?action=hello">Hello</a>
 <?php $content = ob_get_clean(); ?>
 
 
-<?php require('template.php'); ?>
-<a href="/index.php?name=Corinne&action=hello">hello</a>
+<?php require('view/template.php'); ?>
+
