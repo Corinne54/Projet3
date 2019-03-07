@@ -1,5 +1,6 @@
 <?php
 session_start();
+//$_SESSION['message_flash'] = "Tu es bien connecté"
 
 require('controller/frontend.php');
 require('controller/backend.php');
@@ -34,6 +35,10 @@ if (isset($_GET['action'])) {
             if (!empty($_POST['email']) && !empty($_POST['password'])) {
                 login($_POST['email'], $_POST['password']);
             }
+       // if(isset($_SESSION['message_flash'])) {
+// on affiche le message et on supprime la variable du tableau pour que ça n'affiche le message qu'une seule fois
+       // }
+
             else {
                 login("","");
             }
@@ -44,7 +49,7 @@ if (isset($_GET['action'])) {
     elseif ($_GET['action'] == 'addPost') {
 
             if (!empty($_TITLE['title']) && !empty($_CONTENT['content'])) {
-                addpost($_POST['title'], $_POST['content'], $_POST['creation_date']);
+                addPost($_POST['title'], $_POST['content']);
             }
 
         }

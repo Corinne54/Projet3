@@ -35,10 +35,9 @@ function addPost($title, $content, $creation_date)
     $postManager = new PostManager();
 
 
-    $affectedLines = $postManager->addPost($title, $content, $creation_date);
+    $ajoutPost = $postManager->addPost($title, $content, $creation_date);
 
-
-    if ($affectedLines === false) {
+    if ($ajoutPost === false) {
 
         throw new Exception('Impossible d\'ajouter le chapitre !');
 
@@ -47,4 +46,6 @@ function addPost($title, $content, $creation_date)
         header('Location: index.php');
 
     }
-}
+    }
+
+    

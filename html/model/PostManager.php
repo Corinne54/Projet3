@@ -27,10 +27,11 @@ class PostManager extends Manager
     public function addPost( $title, $content, $creation_date)
     {
         $db = $this->dbConnect();
-        $post = $db->prepare('INSERT INTO posts(title, content, creation_date) VALUES(?, ?, ?, NOW())');
-        $affectedLines = $post->execute(array($title, $content, $creation_date));
+        $post = $db->prepare('INSERT INTO posts(title, content, creation_date) VALUES(?, ?, NOW())');
+        $ajoutPost = $post->execute(array($title, $content));
 
-        return $affectedLines;
+        return $ajoutPost;
+
     }
 
 }
