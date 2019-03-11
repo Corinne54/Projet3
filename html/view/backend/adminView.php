@@ -2,6 +2,7 @@
 <?php ob_start(); ?>
 
 Hello Admin
+<?=$_SESSION['flash']; ?>
 
 <p>
     Mon email:

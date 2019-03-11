@@ -61,6 +61,7 @@ function login($email, $password)
         if ($user)
         {
             $_SESSION['email'] = $user['email'];
+            $_SESSION['flash'] = 'Vous êtes bien connecté';
             header('Location: index.php?action=admin');
 
         }

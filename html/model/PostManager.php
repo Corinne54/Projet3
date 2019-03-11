@@ -24,8 +24,10 @@ class PostManager extends Manager
     }
 
     // Ajoute un article
-    public function addPost( $title, $content, $creation_date)
-    {
+
+    public function addPost( $title, $content)
+            {
+                var_dump($content);
         $db = $this->dbConnect();
         $post = $db->prepare('INSERT INTO posts(title, content, creation_date) VALUES(?, ?, NOW())');
         $ajoutPost = $post->execute(array($title, $content));

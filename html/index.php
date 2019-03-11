@@ -48,7 +48,7 @@ if (isset($_GET['action'])) {
 
     elseif ($_GET['action'] == 'addPost') {
 
-            if (!empty($_TITLE['title']) && !empty($_CONTENT['content'])) {
+            if (!empty($_POST['title']) && !empty($_POST['content'])) {
                 addPost($_POST['title'], $_POST['content']);
             }
 

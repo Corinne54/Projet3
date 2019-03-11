@@ -8,7 +8,7 @@ Ajouter un chapitre
 </p>
 <?=$_SESSION['email']; ?>
 
-<!-- FORMULAIRE AJOUT D4ARTICLE -->
+<!-- FORMULAIRE AJOUT ARTICLE -->
 <form action="index.php?action=addPost" method="post">
     <p>
         <!-- Titre de l'article -->
@@ -16,7 +16,7 @@ Ajouter un chapitre
         <input type="text" name="title" required>
     </p>
     <!-- Contenu de l'article -->
-    <textarea name="txtContent" id="content"></textarea>
+    <textarea name="content" id="content"></textarea>
     <!-- Bouton d'envoi -->
 
     <button type="submit">Publier</button>

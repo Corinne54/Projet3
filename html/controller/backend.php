@@ -28,14 +28,14 @@ function addpostform ()
 
 }
 
-function addPost($title, $content, $creation_date)
+function addPost($title, $content)
 
 {
-
+var_dump($title);
     $postManager = new PostManager();
 
 
-    $ajoutPost = $postManager->addPost($title, $content, $creation_date);
+    $ajoutPost = $postManager->addPost($title, $content);
 
     if ($ajoutPost === false) {
 
